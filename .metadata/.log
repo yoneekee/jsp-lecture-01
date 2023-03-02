@@ -581,3 +581,55 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 4 0 2023-03-02 15:19:21.758
+!MESSAGE Cannot lock C:\Users\user\.git\index. Ensure that no other process has an open file handle on the lock file C:\Users\user\.git\index.lock, then you may delete the lock file and retry.
+!STACK 0
+org.eclipse.jgit.errors.LockFailedException: Cannot lock C:\Users\user\.git\index. Ensure that no other process has an open file handle on the lock file C:\Users\user\.git\index.lock, then you may delete the lock file and retry.
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:221)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:292)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:258)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1285)
+	at org.eclipse.egit.core.RepositoryHandle.lockDirCache(RepositoryHandle.java:319)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:122)
+	at org.eclipse.egit.ui.internal.staging.StagingView$58.run(StagingView.java:3872)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2023-03-02 15:19:21.761
+!MESSAGE Cannot lock C:\Users\user\.git\index. Ensure that no other process has an open file handle on the lock file C:\Users\user\.git\index.lock, then you may delete the lock file and retry.
+!STACK 0
+org.eclipse.jgit.errors.LockFailedException: Cannot lock C:\Users\user\.git\index. Ensure that no other process has an open file handle on the lock file C:\Users\user\.git\index.lock, then you may delete the lock file and retry.
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:221)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:292)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:258)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1285)
+	at org.eclipse.egit.core.RepositoryHandle.lockDirCache(RepositoryHandle.java:319)
+	at org.eclipse.jgit.api.RmCommand.call(RmCommand.java:125)
+	at org.eclipse.egit.ui.internal.staging.StagingView$59.run(StagingView.java:3901)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2023-03-02 15:19:25.114
+!MESSAGE Cannot lock C:\Users\user\.git\index. Ensure that no other process has an open file handle on the lock file C:\Users\user\.git\index.lock, then you may delete the lock file and retry.
+!STACK 0
+org.eclipse.jgit.errors.LockFailedException: Cannot lock C:\Users\user\.git\index. Ensure that no other process has an open file handle on the lock file C:\Users\user\.git\index.lock, then you may delete the lock file and retry.
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:221)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:292)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:258)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1285)
+	at org.eclipse.egit.core.RepositoryHandle.lockDirCache(RepositoryHandle.java:319)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:122)
+	at org.eclipse.egit.ui.internal.staging.StagingView$58.run(StagingView.java:3872)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2023-03-02 15:19:25.115
+!MESSAGE Cannot lock C:\Users\user\.git\index. Ensure that no other process has an open file handle on the lock file C:\Users\user\.git\index.lock, then you may delete the lock file and retry.
+!STACK 0
+org.eclipse.jgit.errors.LockFailedException: Cannot lock C:\Users\user\.git\index. Ensure that no other process has an open file handle on the lock file C:\Users\user\.git\index.lock, then you may delete the lock file and retry.
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:221)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:292)
+	at org.eclipse.jgit.dircache.DirCache.lock(DirCache.java:258)
+	at org.eclipse.jgit.lib.Repository.lockDirCache(Repository.java:1285)
+	at org.eclipse.egit.core.RepositoryHandle.lockDirCache(RepositoryHandle.java:319)
+	at org.eclipse.jgit.api.RmCommand.call(RmCommand.java:125)
+	at org.eclipse.egit.ui.internal.staging.StagingView$59.run(StagingView.java:3901)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
