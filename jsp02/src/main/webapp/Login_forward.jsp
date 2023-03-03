@@ -9,7 +9,7 @@
 <body>
 
 	<h1>LOGIN FORWARD</h1>
-	<form method="GET" action="Login_ok_forward.jsp">
+	<form method="POST" action="Login_ok_forward.jsp">
 		<div>
 			<input type="text" name="userId" />
 		</div>
