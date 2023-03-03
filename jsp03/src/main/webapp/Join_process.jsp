@@ -49,11 +49,10 @@ int result = pstmt.executeUpdate();
 <body>
 <%
 if(result > 0) {
-	out.println("<alert>회원가입 완료</alert>");
-	out.println("<");
+	out.println("<script>alert('회원가입 완료'); history.back();</script>");
 	//out.println("<h2>회원가입 완료</h2>");
 } else {
-	out.println("<alert>회원가입 실패</alert>");
+	out.println("<script>alert('회원가입 완료'); history.back();</script>");
 	//out.println("<h2>회원가입 실패</h2>");
 }
 %>
