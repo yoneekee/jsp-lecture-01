@@ -34,7 +34,7 @@ int result = pstmt.executeUpdate();
 // 데이터에 변경을 주는 경우 (select 제외 전부) 
 // 영향을 준 개수가 나옴 (1이 뜰 것임 성공했다면)
 
-System.out.println(result);
+//ystem.out.println(result);
 
 %>
 
@@ -50,6 +50,7 @@ System.out.println(result);
 <%
 if(result > 0) {
 	out.println("<alert>회원가입 완료</alert>");
+	out.println("<");
 	//out.println("<h2>회원가입 완료</h2>");
 } else {
 	out.println("<alert>회원가입 실패</alert>");

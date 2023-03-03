@@ -13,14 +13,14 @@
 			<label><span>아이디 :</span><input type="text" name="userID"></label>
 		</div>
 		<div>
-			<label><span>패스워드 :</span><input type="password" name="userPW"></label>
+			<label><span>패스워드 :</span><input type="password"
+				name="userPW"></label>
 		</div>
 		<div>
 			<label><span>이름 : </span><input type="text" name="userName"></label>
 		</div>
 		<div>
-			<span>성별 : </span> 
-			남자<input type="radio" name="gender" value="남자">&nbsp;&nbsp;
+			<span>성별 : </span> 남자<input type="radio" name="gender" value="남자">&nbsp;&nbsp;
 			여자<input type="radio" name="gender" value="여자">
 		</div>
 		<div>
@@ -39,5 +39,6 @@
 		</div>
 	</form>
 
+	<a href="Login.jsp">로그인</a>
 </body>
 </html>

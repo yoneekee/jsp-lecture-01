@@ -20,5 +20,6 @@
 		</div>
 	</form>
 	
+	<a href="Join.jsp">회원가입</a>
 </body>
 </html>

@@ -49,14 +49,14 @@ rs = pstmt.executeQuery(); // SELECT의 실행 결과가 담김
 		String _userName = rs.getString("USERNAME");
 		String _gender = rs.getString("GENDER");
 		String _grade = rs.getString("GRADE");
-		System.out.println(_userID + ", " + _userPW);
+		//System.out.println(_userID + ", " + _userPW);
 		session.setAttribute("userID", _userID);
 		session.setAttribute("userName", _userName);
 		session.setAttribute("gender", _gender);
 		session.setAttribute("grade", _grade);
 		response.sendRedirect("Login_ok.jsp");
 	} else {
-		System.out.println(userID + ", " + userPW);
+		//System.out.println(userID + ", " + userPW);
 		out.println("<script>alert('아이디 패스워드 확인 요망'); history.back();</script>");
 	}
 	%>
