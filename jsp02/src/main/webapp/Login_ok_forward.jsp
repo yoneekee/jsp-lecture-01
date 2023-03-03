@@ -12,6 +12,12 @@
 	String userId = request.getParameter("userId");
 	String userPw = request.getParameter("userPw");
 	String userName = "김회원";
+	
+	/** setAttribute **/
+	/*pageContext.setAttribute("name", "나는 page Context 입니다."); // 단일 페이지
+	request.setAttribute("name", "나는 request 입니다."); // forward(O), sendRedirect(X)
+	session.setAttribute("name", "나는 session 입니다."); // 세션이 사라질 때까지
+	application.setAttribute("name", "나는 application 입니다."); // 서버 종료 시까지*/
 	%>
 
 
