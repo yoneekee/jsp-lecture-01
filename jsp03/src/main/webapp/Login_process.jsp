@@ -1,3 +1,4 @@
+<%@page import="java.net.URLEncoder"%>
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -5,6 +6,7 @@
 <%
 String userID = (String) request.getParameter("userID");
 String userPW = (String) request.getParameter("userPW");
+
 //System.out.println(userID + ", " + userPW);
 %>
 
@@ -16,22 +18,17 @@ String pw = "0000";
 
 Connection conn = null; // 커넥션 객체 초기화
 PreparedStatement pstmt = null;
+ResultSet rs = null;
 
 Class.forName(driver); // 드라이버 가져오겠다
 conn = DriverManager.getConnection(url, id, pw); // 커넥션 연결
 
-String sql = "INSERT INTO MEMBER (USERID, USERPW) VALUES (?, ?)";
+//String sql = "INSERT INTO MEMBER (USERID, USERPW) VALUES (?, ?)";
+String sql = "SELECT * FROM MEMBER WHERE USERID = ? AND USERPW = ?";
 pstmt = conn.prepareStatement(sql);
 pstmt.setString(1, userID);
 pstmt.setString(2, userPW);
-
-int result = pstmt.executeUpdate(); 
-// 데이터에 변경을 주는 경우 (select 제외 전부) 
-// 영향을 준 개수가 나옴 (1이 뜰 것임 성공했다면)
-
-System.out.println(result);
-
-
+rs = pstmt.executeQuery(); // SELECT의 실행 결과가 담김
 %>
 
 
@@ -43,14 +40,25 @@ System.out.println(result);
 <title>Login Process</title>
 </head>
 <body>
-<%
-if(result > 0) {
-	out.println("<alert>로그인 완료</alert>");
-	//out.println("<h2>회원가입 완료</h2>");
-} else {
-	out.println("<alert>로그인 실패</alert>");
-	//out.println("<h2>회원가입 실패</h2>");
-}
-%>
+	<%
+	if (rs.next()) {
+		// 중복 허용을 하지 않는다는 가정 하에 1개가 나옴 (id - primary)
+		// eof : END OF FILE....다음 줄을 읽어라 
+		String _userID = rs.getString("USERID");
+		String _userPW = rs.getString("USERPW");
+		String _userName = rs.getString("USERNAME");
+		String _gender = rs.getString("GENDER");
+		String _grade = rs.getString("GRADE");
+		System.out.println(_userID + ", " + _userPW);
+		session.setAttribute("userID", _userID);
+		session.setAttribute("userName", _userName);
+		session.setAttribute("gender", _gender);
+		session.setAttribute("grade", _grade);
+		response.sendRedirect("Login_ok.jsp");
+	} else {
+		System.out.println(userID + ", " + userPW);
+		out.println("<script>alert('아이디 패스워드 확인 요망'); history.back();</script>");
+	}
+	%>
 </body>
 </html>

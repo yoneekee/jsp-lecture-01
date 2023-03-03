@@ -5,7 +5,9 @@
 <%
 String userID = (String) request.getParameter("userID");
 String userPW = (String) request.getParameter("userPW");
-System.out.println(userID + ", " + userPW);
+String userName = (String) request.getParameter("userName");
+String gender = (String) request.getParameter("gender");
+String grade = (String) request.getParameter("grade");
 %>
 
 <%
@@ -20,17 +22,19 @@ PreparedStatement pstmt = null;
 Class.forName(driver); // 드라이버 가져오겠다
 conn = DriverManager.getConnection(url, id, pw); // 커넥션 연결
 
-String sql = "INSERT INTO MEMBER (USERID, USERPW) VALUES (?, ?)";
+String sql = "INSERT INTO MEMBER (USERID, USERPW, USERNAME, GENDER, GRADE) VALUES (?, ?, ?, ?, ?)";
 pstmt = conn.prepareStatement(sql);
 pstmt.setString(1, userID);
 pstmt.setString(2, userPW);
+pstmt.setString(3, userName);
+pstmt.setString(4, gender);
+pstmt.setString(5, grade);
 
 int result = pstmt.executeUpdate(); 
 // 데이터에 변경을 주는 경우 (select 제외 전부) 
 // 영향을 준 개수가 나옴 (1이 뜰 것임 성공했다면)
 
 System.out.println(result);
-
 
 %>
 
