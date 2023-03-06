@@ -1,7 +1,7 @@
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
 <%
 request.setCharacterEncoding("UTF-8");
 String userID = request.getParameter("userID");
@@ -33,13 +33,12 @@ try {
 	if(rs.next()) { // 결과값이 하나라도 있으면 (pk조건 때문에 하나일 것)
 		String userName = rs.getString("userName");
 		String userId = rs.getString("userID");
-		out.println("<script>alert('" + userName + " 님 로그인 되었습니다.');</script>");
-		
+		out.println("<script>alert('" + userName + " 님 로그인 되었습니다.');</script>");	
 		session.setAttribute("userID", userId);
 		session.setAttribute("userName", userName);
 		response.sendRedirect("index_hello.jsp");
 	} else {
-		out.println("<script> alert('로그인에 실패했습니다. 아이디 패스워드 확인 요망.'); history.back();</script>");
+		out.println("<script> alert('로그인에 실패했습니다. 아이디 패스워드 확인 요망.'); history.back(); </script>");
 	}
 	
 } catch (Exception e) {
@@ -49,5 +48,7 @@ try {
 		pstmt.close();
 	if (conn != null)
 		conn.close();
+	if (rs != null)
+		rs.close();
 }
 %>

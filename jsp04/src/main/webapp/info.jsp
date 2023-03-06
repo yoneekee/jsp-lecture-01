@@ -1,9 +1,9 @@
+<!-- info.jsp -->
+
+<%@page import="java.util.Date"%>
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-<%@ include file="./include/header.jsp"%>
-<%@ include file="./include/index.jsp"%>
 
 <%
 String driver = "oracle.jdbc.OracleDriver";
@@ -28,22 +28,33 @@ try {
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, userID);
 	rs = pstmt.executeQuery();
-	
 	if (rs.next()) {
-		out.println("<h2> [" + rs.getString("userName") + " 님의 정보 ]</h2>");
-		out.println("<ul>");
-		out.println("<li>이름 : " + rs.getString("userName") + "</li>");
-		out.println("<li>아이디 : " + rs.getString("userID") + "</li>");
-		out.println("<li>이메일 : " + rs.getString("userEmail") + "</li>");	
+		String userId = rs.getString("userID");
+		String userPw = rs.getString("userPW");
+		String userEmail = rs.getString("userEmail");
+		String userName = rs.getString("userName");
+		String address = rs.getString("address");
 		String phone = rs.getString("userHP");
-		out.println("<li>전화번호 : " + phone.substring(0, 3) + "-" + phone.substring(3, 7) + "-" + phone.substring(7)+ "</li>");
-		out.println("<li>주소 : " + rs.getString("address") + "(" + rs.getInt("zipcode") + ")</li>");
-		out.println("<li>가입일 : " + rs.getDate("regdate") +"</li>");
-		out.println("</ul>");
+		int zipcode = rs.getInt("zipcode");
+		Date regdate = rs.getDate("regdate");
+
+		request.setAttribute("userName", userName);
+		request.setAttribute("userId", userId);
+		request.setAttribute("userEmail", userEmail);
+		request.setAttribute("userPw", userPw);
+		request.setAttribute("address", address + " (우편번호 : " + zipcode + ")");
+		request.setAttribute("phone", phone);
+		request.setAttribute("regdate", regdate);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("./info_show.jsp");
+		dispatcher.forward(request, response);
+
+	} else {
+
 	}
 } catch (Exception e) {
 	e.printStackTrace();
 } finally {
+
 	if (pstmt != null)
 		pstmt.close();
 	if (conn != null)
