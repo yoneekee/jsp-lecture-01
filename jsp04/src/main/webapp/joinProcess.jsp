@@ -41,6 +41,7 @@ try {
 	if (result > 0) {
 		//response.sendRedirect("list.jsp");
 		out.println("<script>alert('회원가입이 되었습니다.');</script>");
+		response.sendRedirect("./login.jsp");
 	}
 } catch (Exception e) {
 	e.printStackTrace();
