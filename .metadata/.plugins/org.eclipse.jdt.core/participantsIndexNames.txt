@@ -11,3 +11,7 @@ C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.j
 \MyHome_0128_심테추가\src\main\java
 C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1739913649.index
 \jsp02\src\main\java
+C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2688726462.index
+\jsp04\src\main\java
+C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\167839238.index
+\jsp04\src\main\java
