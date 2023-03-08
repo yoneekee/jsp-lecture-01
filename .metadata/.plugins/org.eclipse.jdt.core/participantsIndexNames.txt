@@ -1,10 +1,16 @@
 INDEX VERSION 1.131
+C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\807703523.index
+\jsp06\src\main\java
 C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\167839238.index
 \jsp04\src\main\java
+C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\530375282.index
+\jsp06\src\main\java
 C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2911839772.index
 \jsp04_mine\src\main\java
 C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\984906913.index
 \jsp04_mine\src\main\java
+C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\638645394.index
+\jsp06\src\main\java
 C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1193707002.index
 \jsp05\src\main\java
 C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1412947187.index
@@ -17,6 +23,8 @@ C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.j
 \jsp04_mine\src\main\java
 C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\875471413.index
 \jsp01\src\main\java
+C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\984219500.index
+\jsp06\src\main\java
 C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3229634233.index
 \jsp04\src\main\java
 C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1739913649.index
