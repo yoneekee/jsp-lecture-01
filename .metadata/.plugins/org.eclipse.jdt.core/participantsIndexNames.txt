@@ -13,6 +13,8 @@ C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.j
 \jsp04\src\main\java
 C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3759289074.index
 \jsp03\src\main\java
+C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\405374357.index
+\jsp04_mine\src\main\java
 C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\875471413.index
 \jsp01\src\main\java
 C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3229634233.index

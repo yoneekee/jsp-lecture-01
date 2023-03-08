@@ -7,7 +7,8 @@ String idx = request.getParameter("idx");
 String userName = request.getParameter("userName");
 String subject = request.getParameter("subject");
 String contents = request.getParameter("contents");
-System.out.println("11111");
+String ajaxMsg = request.getParameter("ajaxMsg");
+System.out.println("11111" + ajaxMsg);
 
 %>
 <!DOCTYPE html>

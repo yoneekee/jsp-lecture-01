@@ -78,7 +78,12 @@ try {
 	<a href="list.jsp"><button>리스트로 가기</button></a>
 	<a href="write.jsp"><button>글쓰러 가기</button></a>
 	<a href="delete.jsp?idx=<%=no%>"><button>삭제하러 가기</button></a>
+	<a
+		href="modify.jsp?userName=<%=userName%>&idx=<%=no%>
+		&subject=<%=subject%> &contents=<%=contents%>"><button
+			class="btn confirm">수정하러 가기</button></a>
 
+	<!--  
 	<form action="modify.jsp" method="POST">
 		<input type="hidden" value=<%=no%> name="idx" /> <input type="hidden"
 			value=<%=userName%> name="userName" /> <input type="hidden"
@@ -86,6 +91,8 @@ try {
 			value=<%=contents%> name="contents" />
 		<button class="btn confirm">수정하러 가기</button>
 	</form>
+	-->
+
 
 	<%
 	}
@@ -102,5 +109,25 @@ try {
 	%>
 </body>
 
+<script>
+	$(".confirm").on("click", function() {
+		const msg = "this is a msg for checking ajax function";
+		//alert(msg);
+		$.ajax({
+			url : "modify.jsp", 
+			dataType : "json",
+			Type : "post",
+			data : {
+				"ajaxMsg" : msg
+			},
+			fail : function(error) {
+				alert(error);
+			},
+			success : function(response) {
+				alert(response);
+			}
+		});
+	});
+</script>
 
 </html>
