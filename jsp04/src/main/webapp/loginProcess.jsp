@@ -1,3 +1,4 @@
+<%@page import="com.jjang051.utils.CookieManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -8,6 +9,9 @@
 	request.setCharacterEncoding("UTF-8");
 	String userID = request.getParameter("userID");
 	String userPW = request.getParameter("userPW");
+	String saveId = request.getParameter("saveId");
+	
+	System.out.println(userID+"==="+userPW+"==="+saveId);
 
 	String driver = "oracle.jdbc.OracleDriver";
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -37,6 +41,18 @@
 			String userId = rs.getString("USERID");
 			session.setAttribute("userName", userName);
 			session.setAttribute("userId", userId);
+			if(saveId!=null && saveId.equals("yes")) {
+				Cookie saveIdCookie = new Cookie("saveIdCookie",userID);
+				saveIdCookie.setPath(request.getContextPath());
+				saveIdCookie.setMaxAge(60*60*24*30);
+				response.addCookie(saveIdCookie);
+				CookieManager.makeCookie(response, "aaa", "bbb", 60*60);
+			} else {
+				//Cookie saveIdCookie = new Cookie("saveIdCookie",null);
+				//saveIdCookie.setMaxAge(0);
+				//response.addCookie(saveIdCookie); 
+				CookieManager.deleteCookie(response, "saveIdCookie");
+			}
 			response.sendRedirect("index.jsp");
 			//out.println("<script>alert('"+userName+"님 로그인 되었습니다.');</script>");
 		} else {
