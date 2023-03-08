@@ -12,6 +12,7 @@
 				<th>아이디</th>
 				<td><input type="text" name="userID" id="userID"
 					placeholder="아이디를 입력하세요." />
+					<p class="idDupl"></p>
 					<button class="btn idCheck">아이디 중복확인</button>
 			</tr>
 			<tr>
@@ -76,11 +77,19 @@
 			},
 			success : function(response) {
 				console.log(response);
-				if (parseInt(response.trim()) === 0) {
-					alert("쓸 수 있는 아이디 입니다.");
+
+				if (parseInt(response.trim()) === 0 && sendUserID != "") {
+					//alert("쓸 수 있는 아이디 입니다.");
 					$("#userID").attr("readonly", true);
+					$(".idDupl").text("사용가능한 아이디입니다.");
+					$(".idDupl").css("color", "green");
+				} else if (sendUserID == "") {
+					$(".idDupl").text("아이디를 입력하세요.");
+					$(".idDupl").css("color", "pink");
 				} else {
-					alert("쓸 수 없는 아이디 입니다.");
+					//alert("쓸 수 없는 아이디 입니다.");
+					$(".idDupl").text("쓸 수 없는 아이디 입니다.");
+					$(".idDupl").css("color", "red");
 					$("#userID").val("");
 					$("#userID").focus();
 

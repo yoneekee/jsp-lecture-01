@@ -11,17 +11,13 @@
 	<%
 		Cookie cookie = new Cookie("myCookie","에이스");
 		cookie.setPath(request.getContextPath());
-		cookie.setMaxAge(3600);
+		cookie.setMaxAge(60*60);
 		response.addCookie(cookie);
 		
 		Cookie oreoCookie = new Cookie("myCookie02","오레오");
 		cookie.setPath(request.getContextPath());
-		cookie.setMaxAge(3600);
+		cookie.setMaxAge(60*60);
 		response.addCookie(oreoCookie);
-	
-	
-		
-		
 	%>
 </body>
 </html>
