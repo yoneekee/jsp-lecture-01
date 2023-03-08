@@ -38,6 +38,6 @@
 			<button type="reset" class="btn reset">취소</button>
 		</div>
 	</form>
-	
+	<a href="list.jsp"><button>리스트보기</button></a>
 </body>
 </html>
