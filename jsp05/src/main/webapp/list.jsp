@@ -32,17 +32,33 @@ try {
 
 
 	<%
+	out.println("<table>");
+	out.println("<colgroup><col style='width: 20%' /><col style='width: 80%' /></colgroup><tbody>");
+	int index = 1;
+	
 	while (rs.next()) {
-	%>
-	<ul>
-		<li>번호 : <%=rs.getInt("NO")%></li>
-		<li>작성자 : <%=rs.getString("userName")%></li>
-		<li><a href="view.jsp?idx=<%=rs.getInt("NO")%>">제목 : <%=rs.getString("subject")%></a></li>
-		<li>글 내용 : <%=rs.getString("contents")%></li>
-		<li>작성일 : <%=rs.getDate("regdate")%></li>
-	</ul>
-	<%
+		out.println("<tr>");
+		out.println("<th>게시물번호 : </th>");
+		out.println("<td>" + index++ + "</td>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<th>작성자 : </th>");
+		out.println("<td>" + rs.getString("userName") + "</td>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<th>글제목 : </th>");
+		out.println("<td><a href='view.jsp?idx=" + rs.getInt("no") + "'>" + rs.getString("subject") + "</a></td>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<th>글내용 : </th>");
+		out.println("<td>" + rs.getString("contents") + "</td>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<th>작성일 : </th>");
+		out.println("<td>" + rs.getDate("regdate") + "</td>");
+		out.println("</tr>");
 	}
+	out.println("</tbody></table>");
 	%>
 
 
