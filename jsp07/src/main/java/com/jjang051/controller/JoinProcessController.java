@@ -50,7 +50,7 @@ public class JoinProcessController extends HttpServlet {
 		MemberDao memberDao = new MemberDao();
 		int result = memberDao.insertMember(memberDto);
 		if(result>0) {
-			ScriptWriter.alertAndNext(response, "회원가입 성공", "./");
+			ScriptWriter.alertAndNext(response, "회원가입 성공", "/jsp07_model02");
 		} else  {
 			ScriptWriter.alertAndBack(response, "회원가입 실패 잠시후 다시 시도해 주세요.");
 		}
