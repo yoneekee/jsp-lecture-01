@@ -7,9 +7,11 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\user\Desktop\2023-japan\jsp-project-01\jsp07"/>
+			<item value="C:\Users\user\Desktop\yonee-personal\myHome"/>
+			<item value="C:\Users\user\Desktop\2023-japan\jsp-project-01\jsp06"/>
 			<item value="C:\Users\user\Desktop\2023-japan\jsp-project-01\jsp04"/>
 			<item value="C:\Users\user\Desktop\2023-japan\jsp-lecture-01"/>
-			<item value="C:\Users\user\Desktop\yonee-personal\myHome"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
