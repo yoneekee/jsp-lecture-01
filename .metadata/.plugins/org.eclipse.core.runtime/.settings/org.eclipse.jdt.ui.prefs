@@ -1,7 +1,7 @@
 breadcrumb.org.eclipse.jst.j2ee.J2EEPerspective=true
 content_assist_completion_replacement_background=200,200,0
 content_assist_completion_replacement_foreground=200,0,0
-content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.jjang051.model.MemberDao"><rhs name\="com.jjang051.model.MemberDao"/></lhs><lhs name\="com.jjang051.model.MemberDto"><rhs name\="com.jjang051.model.MemberDto"/></lhs></history>
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.jjang051.model.MemberDao"><rhs name\="com.jjang051.model.MemberDao"/></lhs><lhs name\="com.jjang051.model.MemberDto"><rhs name\="com.jjang051.model.MemberDto"/></lhs><lhs name\="com.jjang051.model.getConnection"><rhs name\="com.jjang051.model.MemberDao"/></lhs><lhs name\="java.util.Map"><rhs name\="java.util.HashMap"/></lhs></history>
 content_assist_number_of_computers=17
 content_assist_parameters_background=52,57,61
 content_assist_parameters_foreground=238,238,238
