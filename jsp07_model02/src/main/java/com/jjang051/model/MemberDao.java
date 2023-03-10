@@ -1,48 +1,20 @@
 package com.jjang051.model;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
 
-public class MemberDao {
+public class MemberDao extends getConnection {
 
-	private String driver = "oracle.jdbc.OracleDriver";
-	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	private String id = "YONEE001";
-	private String pw = "0000";
-
-	private Connection conn = null;
-	private PreparedStatement pstmt = null;
-	private ResultSet rs = null;
-
-	public void getConnection() {
-		try {
-			Class.forName(driver);
-			conn = DriverManager.getConnection(url, id, pw);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	public MemberDao() {
+		super();
 	}
 
-	public void close() {
-		try {
-			if (rs != null)
-				rs.close();
-			if (pstmt != null)
-				pstmt.close();
-			if (conn != null)
-				conn.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+
 
 	// crud 작성
 	public int insertMember(MemberDto memberDto) {
 		int result = 0;
-		getConnection();
+		
 		String sql = "INSERT INTO MEMBER02 VALUES(MEMBER02_SEQ.NEXTVAL,?,?,?,?,?,?,?,sysdate)";
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -64,20 +36,23 @@ public class MemberDao {
 	}
 
 	public MemberDto getMemberInfo(String userId) {
-		MemberDto memberDto = new MemberDto();
-		getConnection();
+		MemberDto memberDto = null;
+		
 		String sql = "SELECT * FROM MEMBER02 WHERE USERID = ?";
 		try {
+			memberDto = new MemberDto();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userId);
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
+				memberDto.setNo(rs.getInt("no"));
 				memberDto.setUserId(rs.getString("userId"));
 				memberDto.setUserName(rs.getString("userName"));
 				memberDto.setUserHp(rs.getString("userHp"));
 				memberDto.setZipCode(rs.getInt("zipCode"));
 				memberDto.setAddress(rs.getString("address"));
 				memberDto.setUserEmail(rs.getString("userEmail"));
+				memberDto.setRegDate(rs.getString("regdate"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -86,11 +61,39 @@ public class MemberDao {
 		}
 		return memberDto;
 	}
+	
+	public MemberDto getLoggedMemberInfo(String userId, String userPw) {
+
+		MemberDto loggedMember = null;
+		
+		String sql = "SELECT * FROM MEMBER02 WHERE USERID = ? AND USERPW = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userId);
+			pstmt.setString(2, userPw);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				loggedMember = new MemberDto();
+				loggedMember.setUserId(rs.getString("userId"));
+				loggedMember.setUserName(rs.getString("userName"));
+				loggedMember.setUserHp(rs.getString("userHp"));
+				loggedMember.setZipCode(rs.getInt("zipCode"));
+				loggedMember.setAddress(rs.getString("address"));
+				loggedMember.setUserEmail(rs.getString("userEmail"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return loggedMember;
+	}
+
 
 	public MemberDto getLoggedMemberInfo(MemberDto dto) {
 
-		MemberDto loggedMemberDto = null;
-		getConnection();
+		MemberDto loggedMember = null;
+		
 		String sql = "SELECT * FROM MEMBER02 WHERE USERID = ? AND USERPW = ?";
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -98,19 +101,19 @@ public class MemberDao {
 			pstmt.setString(2, dto.getUserPw());
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				loggedMemberDto = new MemberDto();
-				loggedMemberDto.setUserId(rs.getString("userId"));
-				loggedMemberDto.setUserName(rs.getString("userName"));
-				loggedMemberDto.setUserHp(rs.getString("userHp"));
-				loggedMemberDto.setZipCode(rs.getInt("zipCode"));
-				loggedMemberDto.setAddress(rs.getString("address"));
-				loggedMemberDto.setUserEmail(rs.getString("userEmail"));
+				loggedMember = new MemberDto();
+				loggedMember.setUserId(rs.getString("userId"));
+				loggedMember.setUserName(rs.getString("userName"));
+				loggedMember.setUserHp(rs.getString("userHp"));
+				loggedMember.setZipCode(rs.getInt("zipCode"));
+				loggedMember.setAddress(rs.getString("address"));
+				loggedMember.setUserEmail(rs.getString("userEmail"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return loggedMemberDto;
+		return loggedMember;
 	}
 }

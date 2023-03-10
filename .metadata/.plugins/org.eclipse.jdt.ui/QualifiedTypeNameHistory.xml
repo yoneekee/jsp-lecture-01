@@ -4,4 +4,9 @@
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+    <fullyQualifiedTypeName name="com.jjang051.model.MemberDao"/>
+    <fullyQualifiedTypeName name="com.jjang051.model.MemberDto"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="com.jjang051.utils.ScriptWriter"/>
 </qualifiedTypeNameHistroy>

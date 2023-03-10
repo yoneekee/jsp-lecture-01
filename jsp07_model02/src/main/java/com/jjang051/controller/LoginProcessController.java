@@ -40,7 +40,9 @@ public class LoginProcessController extends HttpServlet {
 		
 		if(loggedMemberInfo != null) {
 			session.setAttribute("loggedMemberInfo", loggedMemberInfo);
-			ScriptWriter.alertAndNext(response, "로그인 되었습니다.", "../");
+			session.setAttribute("userId", loggedMemberInfo.getUserId());
+			session.setAttribute("userName", loggedMemberInfo.getUserName());
+			ScriptWriter.alertAndNext(response, loggedMemberInfo.getUserName() + " 님, 반갑습니다.", "../");
 			System.out.println(loggedMemberInfo.getUserId() + " 님, 로그인 됨.");
 		} else {
 			ScriptWriter.alertAndBack(response, "아이디 및 패스워드 재확인 요망");

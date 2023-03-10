@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.jjang051.model.MemberDao;
 import com.jjang051.model.MemberDto;
@@ -23,7 +24,8 @@ public class MemberInfoController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-		String userId = request.getParameter("userId");
+		HttpSession session = request.getSession();
+		String userId = (String) session.getAttribute("userId");
 		MemberDao memberDao = new MemberDao();
 		MemberDto  memberDto = new MemberDto();
 		memberDto = memberDao.getMemberInfo(userId);
