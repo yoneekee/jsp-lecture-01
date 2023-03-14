@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,18 +11,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/common.css" />
-    <link rel="stylesheet" href="../css/splitting.css" />
-    <link rel="stylesheet" href="../css/fullpage.css" />
-    <link rel="stylesheet" href="../css/layout.css" />
-    <link rel="stylesheet" href="../css/main.css" />
-    <script src="../js/jquery-3.6.3.min.js"></script>
-    <script src="../js/greensock/gsap.min.js"></script>
-    <script src="../js/greensock/CSSRulePlugin.min.js"></script>
-    <script src="../js/splitting.min.js"></script>
-    <script src="../js/fullpage.min.js"></script>
-    <script src="../js/particles.min.js"></script>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/splitting.css" />
+    <link rel="stylesheet" href="./css/fullpage.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="./js/jquery-3.6.3.min.js"></script>
+    <script src="./js/greensock/gsap.min.js"></script>
+    <script src="./js/greensock/CSSRulePlugin.min.js"></script>
+    <script src="./js/splitting.min.js"></script>
+    <script src="./js/fullpage.min.js"></script>
+    <script src="./js/particles.min.js"></script>
   </head>
   <body>
     <header id="header">
