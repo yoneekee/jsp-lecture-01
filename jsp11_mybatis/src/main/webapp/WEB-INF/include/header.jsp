@@ -38,7 +38,7 @@
         <ul class="list">
           <li><a href="">회원가입</a></li>
           <li><a href="">로그인</a></li>
-          <li><a href="">게시판</a></li>
+          <li><a href="../board/list">게시판</a></li>
         </ul>
       </nav>
     </header>

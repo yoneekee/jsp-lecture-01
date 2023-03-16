@@ -21,9 +21,15 @@
 									
 		)
 	</insert>
+	
 	<update id="updateHit" parameterType="Integer">
 		UPDATE BOARD03 SET HIT = HIT + 1 WHERE NO = #{no}
 	</update>
+	
+	<update id="updateBoard" parameterType="BoardDto">
+		UPDATE BOARD03 SET userName=#{userName}, subject=#{subject}, contents=#{contents} WHERE NO = #{no}
+	</update>
+	
 </mapper>
 
 

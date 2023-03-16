@@ -10,12 +10,28 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.jjang051.mybatis.MybatisConnectionFactory;
+
 public class BoardDao {
 	public int insertBoard(BoardDto boardDto) {
 		int result = 0;
 		SqlSession sqlSession = MybatisConnectionFactory.getSqlSession();
 		result = sqlSession.insert
 				("insertBoard",boardDto);
+		if(result>0) {
+			sqlSession.commit();
+		} else {
+			sqlSession.rollback();
+		}
+		sqlSession.close();
+		return result;
+	}
+	
+	public int updateBoard(BoardDto boardDto) {
+		int result = 0;
+		SqlSession sqlSession = MybatisConnectionFactory.getSqlSession();
+		result = sqlSession.insert
+				("updateBoard",boardDto);
 		if(result>0) {
 			sqlSession.commit();
 		} else {
