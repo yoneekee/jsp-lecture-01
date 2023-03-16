@@ -21,6 +21,6 @@
     <fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="com.google.gson.Gson"/>
-    <fullyQualifiedTypeName name="com.jjang051.utils.ScriptWriter"/>
     <fullyQualifiedTypeName name="com.jjang051.model.BoardDto"/>
+    <fullyQualifiedTypeName name="com.jjang051.utils.ScriptWriter"/>
 </qualifiedTypeNameHistroy>
