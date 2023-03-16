@@ -23,6 +23,9 @@ public class BoardListController extends HttpServlet {
     }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
+		
 		BoardDao boardDao = new BoardDao();
 		ArrayList<BoardDto> boardList = (ArrayList<BoardDto>) boardDao.getAllBoard();
 		request.setAttribute("boardList", boardList);

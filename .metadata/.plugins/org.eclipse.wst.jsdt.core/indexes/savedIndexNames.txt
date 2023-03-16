@@ -4,4 +4,3 @@ INDEX VERSION 1.4+C:\Users\user\Desktop\2023-japan\jsp-project-01\.metadata\.plu
 2377057584.index
 2018501382.index
 4287477638.index
-1411993776.index

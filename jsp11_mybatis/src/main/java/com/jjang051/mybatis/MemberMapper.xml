@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jjang051.mybatis.member">
+	<!-- select는 resultType과 parameterType을 가질 수 있다.  id는 dao의 메서드 명이랑 일치 시켜주면 된다.-->
+	<select id="getAllMember" resultType="MemberDto">
+		SELECT * FROM MEMBER03 ORDER BY REGDATE
+	</select>
+	<select id="getOneMember" parameterType="String" resultType="MemberDto">
+		SELECT * FROM MEMBER03 WHERE userId = #{userId}
+	</select>
+	<!-- insert, delete, update는 resultType이 없다 -->
+	<insert id="insertMember" parameterType="MemberDto">
+		INSERT INTO MEMBER03 VALUES (#{userId},
+									#{userPwd},
+									SYSDATE
+									)
+	</insert>
+	<update id="updateMember" parameterType="MemberDto">
+		UPDATE MEMBER03 SET userId=#{userId}, userPwd=#{userPwd} WHERE userId = #{userId}
+	</update>
+</mapper>

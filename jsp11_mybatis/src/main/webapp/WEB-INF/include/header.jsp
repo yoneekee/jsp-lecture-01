@@ -36,7 +36,7 @@
       <nav id="gnb">
         <h2 class="hidden">global navigation</h2>
         <ul class="list">
-          <li><a href="">회원가입</a></li>
+          <li><a href="../board/join">회원가입</a></li>
           <li><a href="">로그인</a></li>
           <li><a href="../board/list">게시판</a></li>
         </ul>
