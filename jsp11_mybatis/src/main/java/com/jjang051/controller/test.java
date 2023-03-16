@@ -8,8 +8,7 @@ public class test {
 	public static void main(String[] args) {
 		MemberDao dao = new MemberDao();
 		MemberDto dto = new MemberDto();
-		
+
 		System.out.println(dao.getOneMember("admin").toString());
 	}
-
 }
