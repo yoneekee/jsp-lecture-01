@@ -28,15 +28,12 @@
 		</c:forEach>
 		<c:if test="${pageDto.pageLast != pageDto.pageEnd }">
 			<li><a
-				href="../board/list?page=${pageDto.pageStart+pageDto.pageBlock }"><span
+				href="../board/list?page=${pageDto.pageStart  +pageDto.pageBlock }"><span
 					class="material-icons"> chevron_right </span></a></li>
 		</c:if>
 		<li><a href="../board/list?page=${pageDto.pageLast}"><span
 				class="material-icons"> last_page </span></a></li>
-		<!-- <li><a href="../board/list?page=1">1</a></li>
-		<li><a href="../board/list?page=2">2</a></li>
-		<li><a href="../board/list?page=3">3</a></li>
-		<li><a href="../board/list?page=4">4</a></li> -->
+
 	</ul>
 	<div class="btns">
 		<a href="../board/write" class="confirm">글쓰기</a> <a href="../index"
