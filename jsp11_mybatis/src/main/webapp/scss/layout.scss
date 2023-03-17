@@ -119,6 +119,12 @@ a {
   align-items: center;
   li {
     margin: 0 2px;
+    &.active {
+      a {
+        background-color: #0591b5;
+        pointer-events: none;
+      }
+    }
     a {
       display: flex;
       justify-content: center;

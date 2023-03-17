@@ -114,6 +114,10 @@ a {
 .pageBox li {
   margin: 0 2px;
 }
+.pageBox li.active a {
+  background-color: #0591b5;
+  pointer-events: none;
+}
 .pageBox li a {
   display: flex;
   justify-content: center;
