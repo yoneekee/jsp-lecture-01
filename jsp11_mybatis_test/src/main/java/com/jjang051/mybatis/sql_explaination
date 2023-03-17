@@ -1,0 +1,17 @@
+SELECT * FROM 
+(SELECT ROWNUM AS NUM, B.*FROM 
+    (SELECT * FROM BOARD03 ORDER BY NO DESC) B
+) WHERE NUM >=1 AND NUM <=5;
+
+SELECT * FROM 
+(SELECT ROWNUM AS NUM, B.*FROM 
+    (SELECT * FROM BOARD03 ORDER BY NO DESC) B
+) WHERE NUM >=6 AND NUM <=10;
+
+-- <select id="getAllBoard02" resultType="BoardDto" 
+--	parameterType="HashMap">
+--		SELECT * FROM
+--		    (SELECT ROWNUM AS NUM,B.* FROM
+--		        (SELECT * FROM BOARD03 ORDER BY NO DESC) B
+--		    ) WHERE NUM <![CDATA[>=]]> #{start} AND NUM <![CDATA[<=]]> #{end}
+--	</select>

@@ -4,9 +4,9 @@
 
 <main>
 	<ul class="boardList">
-		<c:forEach items="${boardList }" var="boardDto" varStatus="status"
-			begin="0" end="${total }">
-			<li><span class="no item">${total - (clickedPage-1)*listPerPage - status.index}</span>
+		<c:forEach items="${pageDto.boardList }" var="boardDto"
+			varStatus="status" begin="0" end="${pageDto.total}">
+			<li><span class="no item">${pageDto.total - (pageDto.clickedPage-1)*pageDto.listPerPage - status.index}</span>
 				<span class="userName item">${boardDto.userName}</span> <span
 				class="subject item"><a
 					href="../board/view?no=${boardDto.no}">${boardDto.subject }</a></span> <span
@@ -16,20 +16,22 @@
 	<ul class="pageBox">
 		<li><a href="../board/list?page=1"><span
 				class="material-icons"> first_page </span></a></li>
-		<c:if test="${pageStart!=1 }">
-			<li><a href="../board/list?page=${pageStart-pageBlock }"><span
+		<c:if test="${pageDto.pageStart!=1 }">
+			<li><a
+				href="../board/list?page=${pageDto.pageStart-pageDto.pageBlock }"><span
 					class="material-icons"> chevron_left </span></a></li>
 		</c:if>
-		<c:forEach begin="${pageStart }" end="${pageEnd }" step="1"
-			varStatus="status" var="page">
-			<li class="${clickedPage==page ? 'active':'' }"><a
+		<c:forEach begin="${pageDto.pageStart }" end="${pageDto.pageEnd }"
+			step="1" varStatus="status" var="page">
+			<li class="${pageDto.clickedPage==page ? 'active':'' }"><a
 				href="../board/list?page=${page }">${page }</a></li>
 		</c:forEach>
-		<c:if test="${pageLast != pageEnd }">
-			<li><a href="../board/list?page=${pageStart+pageBlock }"><span
+		<c:if test="${pageDto.pageLast != pageDto.pageEnd }">
+			<li><a
+				href="../board/list?page=${pageDto.pageStart+pageDto.pageBlock }"><span
 					class="material-icons"> chevron_right </span></a></li>
 		</c:if>
-		<li><a href="../board/list?page=${pageLast}"><span
+		<li><a href="../board/list?page=${pageDto.pageLast}"><span
 				class="material-icons"> last_page </span></a></li>
 		<!-- <li><a href="../board/list?page=1">1</a></li>
 		<li><a href="../board/list?page=2">2</a></li>
