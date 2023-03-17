@@ -24,9 +24,6 @@ public class BoardViewController extends HttpServlet {
 
 
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
-		
     	int no = Integer.parseInt(request.getParameter("no")) ;
     	BoardDao boardDao = new BoardDao();
     	int result = boardDao.updateHit(no);

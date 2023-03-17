@@ -2,11 +2,24 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jjang051.mybatis.board">
+<mapper namespace="com.jjang051.mybatis">
+	<select id="getTotal" resultType="Integer">
+		SELECT COUNT(*) AS TOTAL FROM BOARD03
+	</select>
 	<!-- select는 resultType과 parameterType을 가질 수 있다.  id는 dao의 메서드 명이랑 일치 시켜주면 된다.-->
 	<select id="getAllBoard" resultType="BoardDto">
 		SELECT * FROM BOARD03 ORDER BY NO
 	</select>
+	
+	<select id="getAllBoard02" resultType="BoardDto" 
+	parameterType="HashMap">
+		SELECT * FROM
+		    (SELECT ROWNUM AS NUM,B.* FROM
+		        (SELECT * FROM BOARD03 ORDER BY NO DESC) B
+		    ) WHERE NUM <![CDATA[>=]]> #{start} AND NUM <![CDATA[<=]]> #{end}
+	</select>
+	
+	
 	<select id="getSelectOne" parameterType="Integer" resultType="BoardDto">
 		SELECT * FROM BOARD03 WHERE NO = #{no}
 	</select>
@@ -18,18 +31,15 @@
 									#{contents},
 									SYSDATE,
 									0
-									
 		)
 	</insert>
-	
 	<update id="updateHit" parameterType="Integer">
 		UPDATE BOARD03 SET HIT = HIT + 1 WHERE NO = #{no}
 	</update>
-	
 	<update id="updateBoard" parameterType="BoardDto">
-		UPDATE BOARD03 SET userName=#{userName}, subject=#{subject}, contents=#{contents} WHERE NO = #{no}
+		UPDATE BOARD03 SET USERNAME = #{userName}, SUBJECt = #{subject}, CONTENTS = #{contents} 
+		WHERE NO = #{no}
 	</update>
-	
 </mapper>
 
 

@@ -112,3 +112,22 @@ a {
     }
   }
 }
+
+.pageBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  li {
+    margin: 0 2px;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 3px;
+    }
+  }
+}

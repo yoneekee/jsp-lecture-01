@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.jjang051.model.BoardDao;
 import com.jjang051.model.BoardDto;
-import com.jjang051.util.ScriptWriter;
 
 @WebServlet("/board/modify")
 public class BoardModifyController extends HttpServlet {
@@ -23,16 +22,16 @@ public class BoardModifyController extends HttpServlet {
     }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
-		
-		int no = Integer.parseInt(request.getParameter("no"));
-		BoardDto dto = new BoardDto();
-		BoardDao dao = new BoardDao();
-		dto = dao.getSelectOne(no);
+		int no = Integer.parseInt(request.getParameter("no")) ;
+    	BoardDao boardDao = new BoardDao();
+    	BoardDto boardDto = boardDao.getSelectOne(no);
+    	request.setAttribute("boardDto", boardDto);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/board/modify.jsp");
-		request.setAttribute("boardDto", dto);
 		dispatcher.forward(request, response);
 	}
-
 }
+
+
+
+
+

@@ -20,9 +20,9 @@ public class BoardWriteProcessController extends HttpServlet {
     }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 넘어오는 데이터 받아서 dao넘겨주고
+		// 패이지 바꿔주기..
 		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html;charset=UTF-8");
-		
 		BoardDto boardDto = new BoardDto();
 		boardDto.setUserName(request.getParameter("userName"));
 		boardDto.setSubject(request.getParameter("subject"));

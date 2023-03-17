@@ -35,7 +35,7 @@
 			</tbody>
 		</table>
 		<div class="btns">
-			<a class="btn confirm" href="../board/modify?no=${boardDto.no}">수정</a>
+			<a class="btn confirm" href="../board/modify?no=${boardDto.no }">수정</a>
 			<button class="btn reset" type="reset">취소</button>
 		</div>
 </main>
