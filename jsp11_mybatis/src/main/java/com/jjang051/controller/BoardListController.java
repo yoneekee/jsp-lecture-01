@@ -26,10 +26,8 @@ public class BoardListController extends HttpServlet {
 		BoardDao boardDao = new BoardDao();
 		int total = boardDao.getTotal();  // db에서 긁어온 글 전체 갯수
 		int listPerPage = 5;              // 한번에 보여질 글목록에 뿌려질 갯수
-		
 		int pageBlock = 4; 
 		// 아래쪽 아래쪽 페이지(pageBox)에 한번에 뿌려질 페이지 갯수;  이전 1/2/3 다음  |  이전 4/5/6 다음  
-		
 		
 		
 		String tempClickedPage = request.getParameter("page");
@@ -63,19 +61,13 @@ public class BoardListController extends HttpServlet {
 		ArrayList<BoardDto> boardList = 
 				(ArrayList<BoardDto>) boardDao.getAllBoard02(start,end);
 		request.setAttribute("boardList", boardList);
-		
 		request.setAttribute("clickedPage", clickedPage);
-		
 		request.setAttribute("total", total);
 		request.setAttribute("pageBlock", pageBlock);
 		request.setAttribute("listPerPage", listPerPage);
-		//request.setAttribute("pageTotal", pageTotal);
 		request.setAttribute("pageLast", pageLast);
 		request.setAttribute("pageStart", pageStart);
 		request.setAttribute("pageEnd", pageEnd);
-		
-		
-		
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/board/list.jsp");
 		dispatcher.forward(request, response);

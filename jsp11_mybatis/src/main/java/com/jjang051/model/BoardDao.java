@@ -51,6 +51,7 @@ public class BoardDao {
 		List<BoardDto> boardList = null;
 		SqlSession sqlSession = MybatisConnectionFactory.getSqlSession();
 		boardList = sqlSession.selectList("getAllBoard02",pageMap);
+		// 파라미터를 여러개를 넣을 수가 없어서 pageMap 해시맵으로 파라미터 던져버린 것
 		sqlSession.close();
 		return boardList;
 	}
